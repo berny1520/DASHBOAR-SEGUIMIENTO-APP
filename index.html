@@ -219,6 +219,13 @@
     </div>
 
     <div class="group">
+      <label for="filtro-contrato">Contrato:</label>
+      <select id="filtro-contrato" onchange="aplicarFiltros()">
+        <option value="TODOS">Todos</option>
+      </select>
+    </div>
+
+    <div class="group">
       <label for="filtro-concepto">Concepto:</label>
       <select id="filtro-concepto" onchange="aplicarFiltros()">
         <option value="TODOS">Todos</option>
@@ -461,6 +468,7 @@
       })).filter(r => r.concepto !== "" && (r.rut !== "" || r.nombre !== ""));
 
       poblarFiltroEquipos(registrosBase);
+      poblarFiltroContrato(registrosBase);
       poblarFiltroConcepto(registrosBase);
       aplicarFiltros();
 
@@ -486,6 +494,24 @@
     if ([...select.options].some(o => o.value === actual)) select.value = actual;
   }
 
+  function poblarFiltroContrato(reg) {
+    const select = document.getElementById("filtro-contrato");
+    const actual = select.value || "TODOS";
+
+    select.innerHTML = '<option value="TODOS">Todos</option>';
+    const contratos = Array.from(new Set(reg.map(r => (r.contrato || "Sin dato").trim()))).sort();
+
+    contratos.forEach(ct => {
+      const opt = document.createElement("option");
+      opt.value = ct;
+      opt.textContent = ct;
+      select.appendChild(opt);
+    });
+
+    if ([...select.options].some(o => o.value === actual)) select.value = actual;
+  }
+
+
   function poblarFiltroConcepto(reg) {
     const select = document.getElementById("filtro-concepto");
     const actual = select.value || "TODOS";
@@ -508,6 +534,7 @@
     const rutBusqueda = document.getElementById("filtro-rut").value.trim();
     const estadoSel   = document.getElementById("filtro-estado").value;
     const equipoSel   = document.getElementById("filtro-equipo").value;
+    const contratoSel = document.getElementById("filtro-contrato").value;
     const conceptoSel = document.getElementById("filtro-concepto").value;
 
     const desdeVal = document.getElementById("filtro-desde").value;
@@ -530,6 +557,11 @@
 
     if (equipoSel !== "TODOS") {
       datos = datos.filter(r => (r.equipo || "").trim() === equipoSel);
+    }
+
+    // ✅ Filtro por CONTRATO
+    if (contratoSel !== "TODOS") {
+      datos = datos.filter(r => (r.contrato || "").trim() === contratoSel);
     }
 
     // ✅ Filtro por CONCEPTO
@@ -556,6 +588,7 @@
     document.getElementById("filtro-rut").value = "";
     document.getElementById("filtro-estado").value = "TODOS";
     document.getElementById("filtro-equipo").value = "TODOS";
+    document.getElementById("filtro-contrato").value = "TODOS";
     document.getElementById("filtro-concepto").value = "TODOS";
     document.getElementById("filtro-desde").value = "";
     document.getElementById("filtro-hasta").value = "";
