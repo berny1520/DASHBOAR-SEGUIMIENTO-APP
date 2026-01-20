@@ -14,25 +14,19 @@
       --text-main: #222;
       --text-muted: #777;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text-main);
     }
-
     header {
       background: var(--dark);
       color: #fff;
       padding: 10px 30px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-
     header > div {
       max-width: 1500px;
       margin: 0 auto;
@@ -40,21 +34,9 @@
       align-items: center;
       gap: 18px;
     }
-
-    header img {
-      height: 55px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-
-    header .subtitle {
-      font-size: 13px;
-      color: #ccc;
-      margin-top: 3px;
-    }
+    header img { height: 55px; }
+    header h1 { margin: 0; font-size: 22px; }
+    header .subtitle { font-size: 13px; color: #ccc; margin-top: 3px; }
 
     .container {
       max-width: 1500px;
@@ -75,17 +57,9 @@
       margin-bottom: 18px;
       font-size: 13px;
     }
-    .filters-bar .group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .filters-bar label {
-      font-weight: bold;
-      margin-right: 2px;
-    }
-    .filters-bar input,
-    .filters-bar select {
+    .filters-bar .group { display: flex; align-items: center; gap: 6px; }
+    .filters-bar label { font-weight: bold; margin-right: 2px; }
+    .filters-bar input, .filters-bar select {
       padding: 5px 7px;
       font-size: 13px;
       border-radius: 5px;
@@ -104,24 +78,10 @@
       transform: translateY(1px);
       box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
     }
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
-    .btn-secondary {
-      background: #6c757d;
-      color: #fff;
-    }
-    .btn-pdf {
-      background: #d9534f;
-      color: #fff;
-    }
-
-    .filters-bar .right {
-      margin-left: auto;
-      display: flex;
-      gap: 8px;
-    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: #6c757d; color: #fff; }
+    .btn-pdf { background: #d9534f; color: #fff; }
+    .filters-bar .right { margin-left: auto; display: flex; gap: 8px; }
 
     /* KPIs */
     .kpi-grid {
@@ -141,9 +101,7 @@
     .kpi-card::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
+      left: 0; top: 0; bottom: 0;
       width: 4px;
       background: var(--primary);
     }
@@ -153,14 +111,8 @@
       text-transform: uppercase;
       margin-bottom: 4px;
     }
-    .kpi-value {
-      font-size: 21px;
-      font-weight: bold;
-    }
-    .kpi-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
+    .kpi-value { font-size: 21px; font-weight: bold; }
+    .kpi-sub { font-size: 11px; color: var(--text-muted); }
     .kpi-extra {
       font-size: 11px;
       color: var(--primary);
@@ -178,7 +130,6 @@
       margin-top: 10px;
       margin-bottom: 20px;
     }
-
     .chart-card {
       background: var(--card-bg);
       border-radius: 10px;
@@ -188,32 +139,13 @@
       display: flex;
       flex-direction: column;
     }
-
-    .chart-card.wide {
-      grid-column: 1 / -1;   /* ocupa todo el ancho */
-      height: 420px;
-    }
-
-    .chart-card h3 {
-      margin: 0 0 12px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .chart-card canvas {
-      width: 100% !important;
-      height: calc(100% - 20px) !important;
-    }
+    .chart-card.wide { grid-column: 1 / -1; height: 420px; }
+    .chart-card h3 { margin: 0 0 12px; font-size: 15px; font-weight: 600; }
+    .chart-card canvas { width: 100% !important; height: calc(100% - 20px) !important; }
 
     @media (max-width: 950px) {
-      .charts-grid {
-        grid-template-columns: 1fr;
-      }
-      .chart-card,
-      .chart-card.wide {
-        grid-column: 1 / -1;
-        height: 360px;
-      }
+      .charts-grid { grid-template-columns: 1fr; }
+      .chart-card, .chart-card.wide { grid-column: 1 / -1; height: 360px; }
     }
 
     /* Tabla */
@@ -232,37 +164,16 @@
       border-bottom: 1px solid #eee;
       white-space: nowrap;
     }
-    th {
-      background: #f4f6f8;
-      text-align: left;
-    }
-    tr:nth-child(even) td {
-      background: #fafafa;
-    }
-    tr:hover td {
-      background: #e9f3ff;
-    }
+    th { background: #f4f6f8; text-align: left; }
+    tr:nth-child(even) td { background: #fafafa; }
+    tr:hover td { background: #e9f3ff; }
 
-    /* Impresión */
     @media print {
-      body {
-        background: #fff;
-      }
-      header {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      .filters-bar {
-        display: none;
-      }
-      button {
-        display: none;
-      }
-      .container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0 5mm;
-      }
+      body { background: #fff; }
+      header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .filters-bar { display: none; }
+      button { display: none; }
+      .container { max-width: 100%; margin: 0; padding: 0 5mm; }
     }
   </style>
 </head>
@@ -273,9 +184,7 @@
     <img src="logo_Xtreme.png" alt="Xtreme Mining" />
     <div>
       <h1>Dashboard Seguimiento Operadores – Capacitación y Certificación</h1>
-      <div class="subtitle">
-        Creado por Bernardo Ojeda Molina – Jefe de Innovación y Formación
-      </div>
+      <div class="subtitle">Creado por Bernardo Ojeda Molina – Jefe de Innovación y Formación</div>
     </div>
   </div>
 </header>
@@ -309,22 +218,10 @@
       </select>
     </div>
 
-    if (conceptoSel !== "TODOS") {
-    datos = datos.filter(r => (r.concepto || "") === conceptoSel);
-  }
-
-    if (desdeDate) {
-    datos = datos.filter(r => r.fechaDate && r.fechaDate >= desdeDate);
-  }
-
-    if (hastaDate) {
-    datos = datos.filter(r => r.fechaDate && r.fechaDate <= hastaDate);
-  }
-
     <div class="group">
       <label for="filtro-concepto">Concepto:</label>
       <select id="filtro-concepto" onchange="aplicarFiltros()">
-       <option value="TODOS">Todos</option>
+        <option value="TODOS">Todos</option>
       </select>
     </div>
 
@@ -351,33 +248,39 @@
       <div class="kpi-value" id="kpi-total-registros">0</div>
       <div class="kpi-sub">Total filas con concepto</div>
     </div>
+
     <div class="kpi-card">
       <div class="kpi-title">Operadores únicos</div>
       <div class="kpi-value" id="kpi-operadores-unicos">0</div>
       <div class="kpi-sub">Por RUT / Nombre</div>
     </div>
+
     <div class="kpi-card">
       <div class="kpi-title">Total personas</div>
       <div class="kpi-value" id="kpi-total-personas">0</div>
       <div class="kpi-sub">Únicas por RUT (o Nombre)</div>
     </div>
+
     <div class="kpi-card">
       <div class="kpi-title">Cantidad total</div>
       <div class="kpi-value" id="kpi-cantidad-total">0</div>
       <div class="kpi-sub">Suma columna CANTIDAD</div>
     </div>
+
     <div class="kpi-card">
       <div class="kpi-title">Cerrados</div>
       <div class="kpi-extra" id="kpi-cerrados-pct">0%</div>
       <div class="kpi-value" id="kpi-cerrados">0</div>
       <div class="kpi-sub">Estado CERRADO</div>
     </div>
+
     <div class="kpi-card">
       <div class="kpi-title">En proceso</div>
       <div class="kpi-extra" id="kpi-proceso-pct">0%</div>
       <div class="kpi-value" id="kpi-proceso">0</div>
       <div class="kpi-sub">Estado PROCESO</div>
     </div>
+
     <div class="kpi-card">
       <div class="kpi-title">Sin respuesta</div>
       <div class="kpi-extra" id="kpi-sin-respuesta-pct">0%</div>
@@ -392,22 +295,27 @@
       <h3>Cantidad por concepto</h3>
       <canvas id="chartConcepto"></canvas>
     </div>
+
     <div class="chart-card">
       <h3>Personas únicas por concepto</h3>
       <canvas id="chartPersonasConcepto"></canvas>
     </div>
+
     <div class="chart-card">
       <h3>Registros por estado</h3>
       <canvas id="chartEstado"></canvas>
     </div>
+
     <div class="chart-card">
       <h3>Cantidad por equipo (unidades)</h3>
       <canvas id="chartEquipo"></canvas>
     </div>
+
     <div class="chart-card">
       <h3>Cantidad por fecha de cierre</h3>
       <canvas id="chartFecha"></canvas>
     </div>
+
     <div class="chart-card">
       <h3>Operadores únicos por equipo</h3>
       <canvas id="chartEquipoOperadores"></canvas>
@@ -442,12 +350,10 @@
   let registrosBase = [];
   let registrosActuales = [];
 
-  let chartConcepto, chartEstado, chartEquipo, chartFecha, chartEquipoOperadores;
+  let chartConcepto, chartEstado, chartEquipo, chartFecha, chartEquipoOperadores, chartPersonasConcepto;
 
-  // Guarda la última versión cruda del CSV para detectar cambios
   let lastCsvRaw = "";
 
-  // CONFIGURACIÓN GLOBAL CHART.JS (mejora estética)
   Chart.defaults.maintainAspectRatio = false;
   Chart.defaults.font.family = "Arial, sans-serif";
   Chart.defaults.plugins.legend.position = "bottom";
@@ -455,56 +361,47 @@
   Chart.defaults.plugins.legend.labels.pointStyle = "circle";
 
   document.addEventListener("DOMContentLoaded", () => {
-    cargarDatos(false);        // primera carga
-    iniciarAutoActualizacion(); // luego refresca solo
+    cargarDatos(false);
+    iniciarAutoActualizacion();
   });
 
-  // Auto-actualización cada X ms
   function iniciarAutoActualizacion() {
-    const INTERVALO_MS = 60000;  // 60 segundos; puedes bajarlo a 15000 si quieres 15 s
-    setInterval(() => {
-      cargarDatos(true);       // true = recarga automática
-    }, INTERVALO_MS);
+    const INTERVALO_MS = 60000;
+    setInterval(() => cargarDatos(true), INTERVALO_MS);
   }
 
-  // Parser CSV simple con comillas
-  function normalizarTexto(x) {
-  return (x || "").toString().trim();
-}
+  function normalizarTexto(x) { return (x || "").toString().trim(); }
 
-// Convierte varias formas típicas a Date (dd/mm/yyyy o yyyy-mm-dd)
-function parseFechaFlexible(s) {
-  s = normalizarTexto(s);
-  if (!s) return null;
+  // dd/mm/yyyy o yyyy-mm-dd
+  function parseFechaFlexible(s) {
+    s = normalizarTexto(s);
+    if (!s) return null;
 
-  // yyyy-mm-dd (input date)
-  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
-    const d = new Date(s + "T00:00:00");
+    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) {
+      const d = new Date(s + "T00:00:00");
+      return isNaN(d) ? null : d;
+    }
+
+    const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    if (m) {
+      const dd = Number(m[1]);
+      const mm = Number(m[2]) - 1;
+      const yy = Number(m[3]);
+      const d = new Date(yy, mm, dd);
+      return isNaN(d) ? null : d;
+    }
+
+    const d = new Date(s);
     return isNaN(d) ? null : d;
   }
 
-  // dd/mm/yyyy o d/m/yyyy
-  const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-  if (m) {
-    const dd = Number(m[1]);
-    const mm = Number(m[2]) - 1;
-    const yy = Number(m[3]);
-    const d = new Date(yy, mm, dd);
-    return isNaN(d) ? null : d;
+  function idPersona(r) {
+    const rut = normalizarTexto(r.rut);
+    const nom = normalizarTexto(r.nombre);
+    return rut || nom || "";
   }
 
-  // fallback
-  const d = new Date(s);
-  return isNaN(d) ? null : d;
-}
-
-// Para contar personas únicas (usa rut si existe, si no nombre)
-function idPersona(r) {
-  const rut = normalizarTexto(r.rut);
-  const nom = normalizarTexto(r.nombre);
-  return rut || nom || "";
-}
-
+  // CSV parser
   function parseCSV(text) {
     const rows = [];
     let current = [];
@@ -516,132 +413,93 @@ function idPersona(r) {
       const next = text[i + 1];
 
       if (insideQuotes) {
-        if (ch === '"' && next === '"') {
-          value += '"';
-          i++;
-        } else if (ch === '"') {
-          insideQuotes = false;
-        } else {
-          value += ch;
-        }
+        if (ch === '"' && next === '"') { value += '"'; i++; }
+        else if (ch === '"') { insideQuotes = false; }
+        else { value += ch; }
       } else {
-        if (ch === '"') {
-          insideQuotes = true;
-        } else if (ch === ",") {
-          current.push(value);
-          value = "";
-        } else if (ch === "\r") {
-          // nada
-        } else if (ch === "\n") {
-          current.push(value);
-          rows.push(current);
-          current = [];
-          value = "";
-        } else {
-          value += ch;
-        }
+        if (ch === '"') insideQuotes = true;
+        else if (ch === ",") { current.push(value); value = ""; }
+        else if (ch === "\r") { /* nada */ }
+        else if (ch === "\n") { current.push(value); rows.push(current); current = []; value = ""; }
+        else { value += ch; }
       }
     }
-    if (value.length > 0 || current.length > 0) {
-      current.push(value);
-      rows.push(current);
-    }
+    if (value.length > 0 || current.length > 0) { current.push(value); rows.push(current); }
     return rows;
   }
 
-  // Carga de datos
   async function cargarDatos(desdeAuto = false) {
     try {
-      const res  = await fetch(CSV_URL);
+      const res = await fetch(CSV_URL);
       const text = await res.text();
 
-      // Si es recarga automática y el CSV es igual al anterior, no hacemos nada
-      if (desdeAuto && text === lastCsvRaw) {
-        console.log("Sin cambios en la base, no se actualiza el dashboard.");
-        return;
-      }
+      if (desdeAuto && text === lastCsvRaw) return;
       lastCsvRaw = text;
 
       const rows = parseCSV(text);
       if (!rows.length) return;
 
-      // Columna 1 = RUT (columna A está vacía)
       const dataRows = rows.filter((c, i) => {
-        if (i === 0) return false;        // encabezados
-        if (!c[1]) return false;          // sin RUT
+        if (i === 0) return false;
+        if (!c[1]) return false;
         if (c[1].toString().toUpperCase() === "RUT") return false;
         return true;
       });
 
-      registrosBase = dataRows
-        .map(c => ({
-          rut:        c[1]  || "",
-          nombre:     c[2]  || "",
-          contrato:   c[3]  || "",
-          equipo:     c[4]  || "",
-          solicitante:c[5]  || "",
-          responsable:c[6]  || "",
-          fecha:      c[7]  || "",
-          fechaDate:  parseFechaFlexible(c[7] || ""),
-          concepto:   c[8]  || "",
-          cantidad:   Number(c[9]  || 0),
-          estado:     (c[10] || "").toUpperCase()
-        }))
-        .filter(r => r.concepto !== "" && (r.rut !== "" || r.nombre !== ""));
-
-      console.log(
-        desdeAuto
-          ? "Registros recargados automáticamente: " + registrosBase.length
-          : "Registros cargados: " + registrosBase.length
-      );
+      registrosBase = dataRows.map(c => ({
+        rut:         c[1]  || "",
+        nombre:      c[2]  || "",
+        contrato:    c[3]  || "",
+        equipo:      c[4]  || "",
+        solicitante: c[5]  || "",
+        responsable: c[6]  || "",
+        fecha:       c[7]  || "",
+        fechaDate:   parseFechaFlexible(c[7] || ""),
+        concepto:    (c[8] || "").trim(),
+        cantidad:    Number(c[9] || 0),
+        estado:      (c[10] || "").toUpperCase().trim()
+      })).filter(r => r.concepto !== "" && (r.rut !== "" || r.nombre !== ""));
 
       poblarFiltroEquipos(registrosBase);
       poblarFiltroConcepto(registrosBase);
-      aplicarFiltros(); // respeta los filtros actuales
+      aplicarFiltros();
 
     } catch (err) {
       console.error("Error cargando datos:", err);
-      if (!desdeAuto) {
-        alert("No se pudo leer la base desde Google Sheets.");
-      }
+      if (!desdeAuto) alert("No se pudo leer la base desde Google Sheets.");
     }
   }
 
   function poblarFiltroEquipos(reg) {
-    const selectEquipo = document.getElementById("filtro-equipo");
-    const valorActual = selectEquipo.value || "TODOS";
+    const select = document.getElementById("filtro-equipo");
+    const actual = select.value || "TODOS";
 
-    selectEquipo.innerHTML = '<option value="TODOS">Todos</option>';
-    const equipos = Array.from(new Set(reg.map(r => r.equipo || "Sin dato"))).sort();
+    select.innerHTML = '<option value="TODOS">Todos</option>';
+    const equipos = Array.from(new Set(reg.map(r => (r.equipo || "Sin dato").trim()))).sort();
     equipos.forEach(eq => {
       const opt = document.createElement("option");
       opt.value = eq;
       opt.textContent = eq;
-      selectEquipo.appendChild(opt);
+      select.appendChild(opt);
     });
 
-    // Mantener la selección si sigue existiendo
-    if ([...selectEquipo.options].some(o => o.value === valorActual)) {
-      selectEquipo.value = valorActual;
-    }
+    if ([...select.options].some(o => o.value === actual)) select.value = actual;
   }
 
   function poblarFiltroConcepto(reg) {
-    const selectConcepto = document.getElementById("filtro-concepto");
-    const valorActual = selectConcepto.value || "TODOS";
+    const select = document.getElementById("filtro-concepto");
+    const actual = select.value || "TODOS";
 
-    selectConcepto.innerHTML = '<option value="TODOS">Todos</option>';
-    const conceptos = Array.from(new Set(reg.map(r => r.concepto || "Sin dato"))).sort();
+    select.innerHTML = '<option value="TODOS">Todos</option>';
+    const conceptos = Array.from(new Set(reg.map(r => (r.concepto || "Sin dato").trim()))).sort();
     conceptos.forEach(cpt => {
       const opt = document.createElement("option");
       opt.value = cpt;
       opt.textContent = cpt;
-      selectConcepto.appendChild(opt);
+      select.appendChild(opt);
     });
 
-    if ([...selectConcepto.options].some(o => o.value === valorActual)) {
-    selectConcepto.value = valorActual;
-    }
+    if ([...select.options].some(o => o.value === actual)) select.value = actual;
   }
 
   function aplicarFiltros() {
@@ -651,23 +509,19 @@ function idPersona(r) {
     const estadoSel   = document.getElementById("filtro-estado").value;
     const equipoSel   = document.getElementById("filtro-equipo").value;
     const conceptoSel = document.getElementById("filtro-concepto").value;
+
     const desdeVal = document.getElementById("filtro-desde").value;
     const hastaVal = document.getElementById("filtro-hasta").value;
 
     const desdeDate = desdeVal ? parseFechaFlexible(desdeVal) : null;
     const hastaDate = hastaVal ? parseFechaFlexible(hastaVal) : null;
-
-    // Ajuste inclusivo hasta fin del día
     if (hastaDate) hastaDate.setHours(23,59,59,999);
-
 
     let datos = registrosBase.slice();
 
     if (rutBusqueda) {
       const rutLower = rutBusqueda.toLowerCase();
-      datos = datos.filter(r =>
-        (r.rut || "").toLowerCase().includes(rutLower)
-      );
+      datos = datos.filter(r => (r.rut || "").toLowerCase().includes(rutLower));
     }
 
     if (estadoSel !== "TODOS") {
@@ -675,7 +529,20 @@ function idPersona(r) {
     }
 
     if (equipoSel !== "TODOS") {
-      datos = datos.filter(r => r.equipo === equipoSel);
+      datos = datos.filter(r => (r.equipo || "").trim() === equipoSel);
+    }
+
+    // ✅ Filtro por CONCEPTO
+    if (conceptoSel !== "TODOS") {
+      datos = datos.filter(r => (r.concepto || "").trim() === conceptoSel);
+    }
+
+    // ✅ Filtro por FECHAS
+    if (desdeDate) {
+      datos = datos.filter(r => r.fechaDate && r.fechaDate >= desdeDate);
+    }
+    if (hastaDate) {
+      datos = datos.filter(r => r.fechaDate && r.fechaDate <= hastaDate);
     }
 
     registrosActuales = datos;
@@ -692,41 +559,35 @@ function idPersona(r) {
     document.getElementById("filtro-concepto").value = "TODOS";
     document.getElementById("filtro-desde").value = "";
     document.getElementById("filtro-hasta").value = "";
-
     aplicarFiltros();
   }
 
-  function exportarPDF() {
-    window.print();
-  }
+  function exportarPDF() { window.print(); }
 
   function actualizarKPIs(reg) {
     const total = reg.length;
     const totalCantidad = reg.reduce((s, r) => s + (r.cantidad || 0), 0);
-    const totalPersonas = new Set(reg.map(r => idPersona(r))).size;
-    document.getElementById("kpi-total-personas").textContent = totalPersonas;
 
-    const setEstado = estado =>
-      reg.filter(r => r.estado === estado).length;
-
-    const cerrados      = setEstado("CERRADO");
-    const proceso       = setEstado("PROCESO");
-    const sinRespuesta  = setEstado("SIN RESPUESTA");
+    const cerrados = reg.filter(r => r.estado === "CERRADO").length;
+    const proceso = reg.filter(r => r.estado === "PROCESO").length;
+    const sinRespuesta = reg.filter(r => r.estado === "SIN RESPUESTA").length;
 
     const operadoresUnicos = new Set(reg.map(r => idPersona(r))).size;
+    const totalPersonas = operadoresUnicos;
 
     const pct = n => total ? ((n / total) * 100).toFixed(1) + "%" : "0%";
 
-    document.getElementById("kpi-total-registros").textContent   = total;
-    document.getElementById("kpi-cantidad-total").textContent    = totalCantidad;
+    document.getElementById("kpi-total-registros").textContent = total;
+    document.getElementById("kpi-cantidad-total").textContent = totalCantidad;
     document.getElementById("kpi-operadores-unicos").textContent = operadoresUnicos;
+    document.getElementById("kpi-total-personas").textContent = totalPersonas;
 
-    document.getElementById("kpi-cerrados").textContent          = cerrados;
-    document.getElementById("kpi-proceso").textContent           = proceso;
-    document.getElementById("kpi-sin-respuesta").textContent     = sinRespuesta;
+    document.getElementById("kpi-cerrados").textContent = cerrados;
+    document.getElementById("kpi-proceso").textContent = proceso;
+    document.getElementById("kpi-sin-respuesta").textContent = sinRespuesta;
 
-    document.getElementById("kpi-cerrados-pct").textContent      = pct(cerrados);
-    document.getElementById("kpi-proceso-pct").textContent       = pct(proceso);
+    document.getElementById("kpi-cerrados-pct").textContent = pct(cerrados);
+    document.getElementById("kpi-proceso-pct").textContent = pct(proceso);
     document.getElementById("kpi-sin-respuesta-pct").textContent = pct(sinRespuesta);
   }
 
@@ -754,7 +615,7 @@ function idPersona(r) {
   function agrupar(reg, clave, usarCantidad = false) {
     const map = {};
     reg.forEach(r => {
-      const key = r[clave] || "Sin dato";
+      const key = (r[clave] || "Sin dato").toString().trim();
       if (!map[key]) map[key] = 0;
       map[key] += usarCantidad ? (r.cantidad || 0) : 1;
     });
@@ -766,8 +627,21 @@ function idPersona(r) {
   function agruparUnicos(reg, claveAgrupar, claveUnico) {
     const map = {};
     reg.forEach(r => {
-      const grupo = r[claveAgrupar] || "Sin dato";
-      const id    = r[claveUnico]   || "";
+      const grupo = (r[claveAgrupar] || "Sin dato").toString().trim();
+      const id = (r[claveUnico] || "").toString().trim();
+      if (!map[grupo]) map[grupo] = new Set();
+      if (id) map[grupo].add(id);
+    });
+    const labels = Object.keys(map);
+    const values = labels.map(l => map[l].size);
+    return { labels, values };
+  }
+
+  function agruparUnicosPor(reg, claveAgrupar) {
+    const map = {};
+    reg.forEach(r => {
+      const grupo = (r[claveAgrupar] || "Sin dato").toString().trim();
+      const id = idPersona(r);
       if (!map[grupo]) map[grupo] = new Set();
       if (id) map[grupo].add(id);
     });
@@ -778,26 +652,29 @@ function idPersona(r) {
 
   function dibujarGraficos(reg) {
     const concepto = agrupar(reg, "concepto", true);
-    const estado   = agrupar(reg, "estado", false);
-    const equipo   = agrupar(reg, "equipo", true);
-    const fecha    = agrupar(reg, "fecha", true);
-    const equipoOps= agruparUnicos(reg, "equipo", "rut");
+    const personasConcepto = agruparUnicosPor(reg, "concepto");
+    const estado = agrupar(reg, "estado", false);
+    const equipo = agrupar(reg, "equipo", true);
+    const fecha = agrupar(reg, "fecha", true);
+    const equipoOps = agruparUnicos(reg, "equipo", "rut");
 
     const ctxConcepto = document.getElementById("chartConcepto").getContext("2d");
-    const ctxEstado   = document.getElementById("chartEstado").getContext("2d");
-    const ctxEquipo   = document.getElementById("chartEquipo").getContext("2d");
-    const ctxFecha    = document.getElementById("chartFecha").getContext("2d");
-    const ctxEqOps    = document.getElementById("chartEquipoOperadores").getContext("2d");
+    const ctxPC = document.getElementById("chartPersonasConcepto").getContext("2d");
+    const ctxEstado = document.getElementById("chartEstado").getContext("2d");
+    const ctxEquipo = document.getElementById("chartEquipo").getContext("2d");
+    const ctxFecha = document.getElementById("chartFecha").getContext("2d");
+    const ctxEqOps = document.getElementById("chartEquipoOperadores").getContext("2d");
 
     if (chartConcepto) chartConcepto.destroy();
-    if (chartEstado)   chartEstado.destroy();
-    if (chartEquipo)   chartEquipo.destroy();
-    if (chartFecha)    chartFecha.destroy();
+    if (chartPersonasConcepto) chartPersonasConcepto.destroy();
+    if (chartEstado) chartEstado.destroy();
+    if (chartEquipo) chartEquipo.destroy();
+    if (chartFecha) chartFecha.destroy();
     if (chartEquipoOperadores) chartEquipoOperadores.destroy();
 
     const palette = {
       primary: "#d9232d",
-      primaryLight: "#f7c1c4",
+      primarySoft: "#ffe5e7",
       blue: "#3498db",
       blueLight: "#d6e9f8",
       orange: "#f5a623",
@@ -816,11 +693,22 @@ function idPersona(r) {
           borderWidth: 2
         }]
       },
-      options: {
-        scales: {
-          y: { beginAtZero: true, ticks: { precision: 0 } }
-        }
-      }
+      options: { scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
+    });
+
+    chartPersonasConcepto = new Chart(ctxPC, {
+      type: "bar",
+      data: {
+        labels: personasConcepto.labels,
+        datasets: [{
+          label: "Personas",
+          data: personasConcepto.values,
+          backgroundColor: palette.primarySoft,
+          borderColor: palette.primary,
+          borderWidth: 2
+        }]
+      },
+      options: { scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
     });
 
     chartEstado = new Chart(ctxEstado, {
@@ -829,7 +717,7 @@ function idPersona(r) {
         labels: estado.labels,
         datasets: [{
           data: estado.values,
-          backgroundColor: [palette.primary, palette.orange, palette.blueLight],
+          backgroundColor: [palette.primary, palette.orange, palette.blueLight, palette.green],
           borderWidth: 1
         }]
       }
@@ -869,11 +757,7 @@ function idPersona(r) {
           fill: true
         }]
       },
-      options: {
-        scales: {
-          y: { beginAtZero: true, ticks: { precision: 0 } }
-        }
-      }
+      options: { scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
     });
 
     chartEquipoOperadores = new Chart(ctxEqOps, {
@@ -900,5 +784,3 @@ function idPersona(r) {
 
 </body>
 </html>
-
-
